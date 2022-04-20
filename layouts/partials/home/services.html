@@ -3,26 +3,37 @@
     <div class="uk-container">
         <div class="uk-flex uk-flex-center">
             <div class="uk-width-2xlarge uk-text-center">
-                <h2 class="uk-text-center">{{ .Site.Data.home.service_list.heading }}</h2>
+                <h2 class="uk-text-center">Dog Training Services</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati atque esse, nobis veniam beatae labore, dolorum suscipit minima fugiat accusamus error? Tempora at beatae libero. Labore itaque excepturi at! Delectus.</p>
             </div>
         </div>
-        <div class="uk-grid-column-small uk-grid-row-small uk-child-width-1-3@s uk-text-center uk-margin-large-top" uk-grid>
-            {{ range first 6 (where .Site.RegularPages "Type" "insurance") }}
+        <div class="uk-grid-column-small uk-grid-row-small uk-child-width-1-2@s uk-text-center uk-margin-large-top" uk-grid>
             <div>
                 <div class="uk-card uk-card-default">
-                    <div class="uk-card-body main__content">
-                        <h3 class="uk-h4 uk-text-bold">{{ .Title }}</h3>
-                        {{ .Params.body | $.Page.RenderString $optBlock | truncate 200 }}
+                    <div class="uk-card-body">
+                        <h3 class="uk-h2">2 Dog Session</h3>
+                        <p>Training will cover the basic sit, down, stay, place. The foundation of Heel and recall and stay will be set but those are behaviors that take a good amount of time and work to be reliable.</p>
                         <div class="uk-margin-small-top">
                             <a href="{{ .Permalink }}" class="accent uk-text-bold">Learn More <span uk-icon="chevron-right"></span></a>
                         </div>
                     </div>
                 </div>
             </div>
-            {{ end }}
+            <div>
+                <div class="uk-card uk-card-default">
+                    <div class="uk-card-body">
+                        <h3 class="uk-h2">Group Class</h3>
+                        <p>Group class will be held every Sunday at 6:30 PM your dog must complete at least one private session with the trainer so we can be sure your dog is ready for group class.</p>
+                        <div class="uk-margin-small-top">
+                            <a href="{{ .Permalink }}" class="accent uk-text-bold">Learn More <span uk-icon="chevron-right"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         </div>
         <div class="uk-margin-medium-top uk-text-center">
-            <a href="/insurance" class="uk-button uk-button-primary slide_right">More insurances</a>
+            <a href="/contact" class="uk-button uk-button-primary slide_right">Get in touch</a>
         </div>
     </div>
 </div>

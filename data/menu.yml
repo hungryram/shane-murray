@@ -1,0 +1,13 @@
+menu:
+  - name: Home
+    link: /
+    menu:
+  - name: About
+    link: /about
+    menu:
+  - name: Services
+    link: /services
+    menu:
+  - name: Contact
+    link: /contact
+    menu:

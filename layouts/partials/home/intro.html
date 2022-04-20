@@ -1,17 +1,19 @@
 {{ $optBlock := dict "display" "block" }}
 
-<div class="uk-section">
+<div class="uk-section uk-section-large">
     <div class="uk-container">
-        <div class="uk-grid-large" uk-grid>
+        <div class="uk-grid-large uk-flex-middle" uk-grid>
             <div class="uk-width-expand">
-                <img src="https://res.cloudinary.com/hungryram19/image/upload/v1631588576/randy-nong/rn-insurance/randy-nong-in-office.jpg" alt="Randy Nong sitting in RN Insurance office">
+                <img src="/assets/dog2.jpg" alt="Randy Nong sitting in RN Insurance office">
             </div>
             <div class="uk-width-3-5@s">
                 <div class="uk-card">
-                    <h3 class="uk-margin-remove uk-h4" style="border-left: 4px solid #aa0817;padding-left: 10px;">{{ .Site.Data.home.introduction.subtitle }}</h3>
-                    <h2 class="uk-margin-small-top">{{ .Site.Data.home.introduction.heading }}</h2>
-                    {{ .Site.Data.home.introduction.body | $.Page.RenderString $optBlock }}
-                    <a href="/about" class="uk-button uk-button-primary slide_right">Learn more</a>
+                    <h2 class="uk-heading-small">AdaptK9 Dog Training</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate doloremque tempora assumenda maxime aliquam ducimus velit sint, alias deleniti quod esse minima dolorem similique iste neque officiis officia, autem nam.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat sequi dicta consequatur pariatur voluptas libero harum tenetur obcaecati quasi ratione.</p>
+                    <div class="uk-margin-large-top">
+                        <a href="/about" class="uk-button uk-button-primary slide_right">Learn more</a>
+                    </div>
                 </div>
             </div>
         </div>

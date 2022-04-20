@@ -2,6 +2,8 @@
 {{ $navColor := .Site.Data.appearance.header }}
 {{ $navContact := .Site.Data.profile.contact_information }}
 {{ $headerSocial := .Site.Data.profile.social_media }}
+
+{{ $mainMenu := .Site.Data.menu }}
 <style>
     nav.uk-navbar-sticky ul li a,
     .uk-navbar-sticky ul li a svg {
@@ -9,7 +11,7 @@
     }
 </style>
 <div class="top-navbar">
-    <nav class="main-nav uk-navbar-container" style="background:#19202A">
+    <nav class="main-nav uk-navbar-container" style="background:#000000">
         <div class="uk-container">
             <div uk-navbar>
                 <div class="uk-navbar-left">
@@ -38,22 +40,21 @@
                 </div>
                 <div class="uk-navbar-right">
                     <ul class="uk-navbar-nav">
-                        {{ $currentPage := . }}
-                        {{ range .Site.Menus.main }}
-                        {{ if .HasChildren }}
+                        {{ range $mainMenu.menu }}
                         <li>
-                            <a href="#">{{ .Name }}<span class="uk-margin-small-left" uk-icon="chevron-down"></span></a>
+                            {{ if .menu }}
+                            <a href="#">{{ .name }}<span class="uk-margin-small-left" uk-icon="chevron-down"></span></a>
                             <div class="uk-navbar-dropdown">
                                 <ul class="uk-nav uk-navbar-dropdown-nav">
-                                    {{ range .Children }}
-                                    <li class="uk-active"><a href="{{ .URL | absURL }}">{{ .Name }}</a></li>
+                                    {{ range .menu }}
+                                    <li class="uk-active"><a href="{{ .link | absURL }}">{{ .name }}</a></li>
                                     {{ end }}
                                 </ul>
                             </div>
+                            {{ else }}
+                            <a href="{{ .link | absURL }}">{{ .name }}</a>
+                            {{ end }}
                         </li>
-                        {{ else }}
-                        <li><a href="{{ .URL | absURL }}">{{ .Name }}</a></li>
-                        {{ end }}
                         {{ end }}
                         </ul>
                 </div>
@@ -69,7 +70,7 @@
     <nav class="uk-navbar uk-navbar-container uk-hidden@s uk-box-shadow-small" style="padding: 0 15px;">
         <div class="uk-navbar-left">
             <a href="{{ .Site.BaseURL }}">
-                <img src="{{ .Site.Data.appearance.branding.logo }}" alt="{{ .Site.Data.profile.company_name }}" width="140">
+                <img src="{{ .Site.Data.appearance.branding.logo }}" alt="{{ .Site.Data.profile.company_name }}" width="200">
             </a>
         </div>
         <div class="uk-navbar-right">
@@ -87,20 +88,21 @@
         <button class="uk-modal-close-full" type="button" uk-close></button>
 
         <ul class="uk-nav-default uk-nav-parent-icon uk-margin-auto-vertical uk-text-center" uk-nav>
-            {{ $currentPage := . }}
-            {{ range .Site.Menus.main }}
-            {{ if .HasChildren }}
-            <li class="uk-parent">
-                <a href="#" class="uk-text-light">{{ .Name }}</a>
-                <ul class="uk-nav-sub">
-                    {{ range .Children }}
-                    <li><a href="{{ .URL | absURL }}" class="uk-text-light">{{ .Name }}</a></li>
-                    {{ end }}
-                </ul>
+            {{ range $mainMenu.menu }}
+            <li>
+                {{ if .menu }}
+                <a href="#">{{ .name }}<span class="uk-margin-small-left" uk-icon="chevron-down"></span></a>
+                <div class="uk-navbar-dropdown">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                        {{ range .menu }}
+                        <li class="uk-active"><a href="{{ .link | absURL }}">{{ .name }}</a></li>
+                        {{ end }}
+                    </ul>
+                </div>
+                {{ else }}
+                <a href="{{ .link | absURL }}">{{ .name }}</a>
+                {{ end }}
             </li>
-            {{ else }}
-            <li><a href="{{ .URL | absURL }}" class="uk-text-light">{{ .Name }}</a></li>
-            {{ end }}
             {{ end }}
         </ul>
     </div>
