@@ -8,6 +8,9 @@ menu:
   - name: Services
     link: /services
     menu:
+  - name: Gallery
+    link: /gallery
+    menu:
   - name: Contact
     link: /contact
     menu:

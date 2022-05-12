@@ -5,7 +5,25 @@
             <h1>AdaptK9 Dog Training Services</h1>
             <p>
                 I offer personalized training plans perfectly tailored to the dog and the owner. My goal is to teach you to be the dog trainer for your specific dog. I will prepare you with the skills and knowledge necessary to help you and your dog have the best relationship and navigate through this world in the most practical and enjoyable ways for both of you! The first training session I like to have at the home, that’s where your dog will spend the majority of its time, and that's where the issues stem from the majority of the time. then we will meet up either in Corona or Riverside to continue the sessions and get your dog desensitized to more dogs by using my demo dog to help train. I cover everything from reactive dogs to puppies even advanced obedience. 
-                </p>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="uk-section uk-section-small service__box">
+    <div class="uk-container">
+        <div class="uk-child-width-1-4@m" uk-grid>
+            {{ range .Params.services }}
+            <div>
+                <div class="uk-card uk-card-default">
+                    <div class="uk-card-body">
+                        <h3 class="uk-h2">{{ .heading }}</h3>
+                        <div class="uk-margin-small-top">
+                            <a href="/contact" class="accent uk-text-bold">Contact <span uk-icon="chevron-right"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{ end }}
         </div>
     </div>
 </div>
