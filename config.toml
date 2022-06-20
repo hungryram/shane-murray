@@ -1,4 +1,4 @@
-baseURL = "https://adaptk9.netlify.app/"
+baseURL = "https://www.adaptk9.com/"
 disableKinds = ["taxonomy", "taxonomyTerm"]
 enableRobotsTXT = "true"
 languageCode = "en-us"
