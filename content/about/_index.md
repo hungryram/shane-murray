@@ -1,5 +1,5 @@
 +++
-title = "About"
+title = "About Adapt K9 Dog Training"
 [search_engine_optimization]
 meta_description = ""
 title_tag = ""
